@@ -1,0 +1,10 @@
+C:\Users\rafae\source\repos\BaixaPraMim\bin\Debug\BaixaPraMim.exe.config
+C:\Users\rafae\source\repos\BaixaPraMim\bin\Debug\BaixaPraMim.exe
+C:\Users\rafae\source\repos\BaixaPraMim\bin\Debug\BaixaPraMim.pdb
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.csprojAssemblyReference.cache
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.Properties.Resources.resources
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.csproj.GenerateResource.cache
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.csproj.CoreCompileInputs.cache
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.exe
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.pdb
+C:\Users\rafae\source\repos\BaixaPraMim\obj\Debug\BaixaPraMim.form_BaixaPraMim.resources
