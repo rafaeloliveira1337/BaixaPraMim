@@ -7,7 +7,7 @@
     <ProjectGuid>{9CC2E579-9083-4818-89DB-91E543939D9B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BaixaPraMim</RootNamespace>
-    <AssemblyName>BaixaPraMim</AssemblyName>
+    <AssemblyName>Baixa Pra Mim</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>cloud-download.ico</ApplicationIcon>
+    <ApplicationIcon>baixapramim.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,7 +83,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="baixapramim.ico" />
     <Content Include="cloud-download.ico" />
+    <None Include="Resources\ffprobe.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\libvpx-1080p.ffpreset" />
+    <None Include="Resources\libvpx-1080p50_60.ffpreset" />
+    <None Include="Resources\libvpx-360p.ffpreset" />
+    <None Include="Resources\libvpx-720p.ffpreset" />
+    <None Include="Resources\libvpx-720p50_60.ffpreset" />
+    <None Include="Resources\youtube-dl.exe" />
+    <None Include="Resources\ffprobe.exe" />
+    <None Include="Resources\ffplay.exe" />
+    <None Include="Resources\ffmpeg.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

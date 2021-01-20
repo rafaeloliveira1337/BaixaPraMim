@@ -37,8 +37,8 @@ namespace BaixaPraMim
             this.label_example = new System.Windows.Forms.Label();
             this.label_developedBy = new System.Windows.Forms.Label();
             this.groupBox_downloadType = new System.Windows.Forms.GroupBox();
-            this.rb_mp3 = new System.Windows.Forms.RadioButton();
             this.rb_video = new System.Windows.Forms.RadioButton();
+            this.rb_mp3 = new System.Windows.Forms.RadioButton();
             this.groupBox_downloadType.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +113,17 @@ namespace BaixaPraMim
             this.groupBox_downloadType.TabStop = false;
             this.groupBox_downloadType.Text = "Tipo de download";
             // 
+            // rb_video
+            // 
+            this.rb_video.AutoSize = true;
+            this.rb_video.Location = new System.Drawing.Point(14, 63);
+            this.rb_video.Name = "rb_video";
+            this.rb_video.Size = new System.Drawing.Size(72, 24);
+            this.rb_video.TabIndex = 1;
+            this.rb_video.TabStop = true;
+            this.rb_video.Text = "Vídeo";
+            this.rb_video.UseVisualStyleBackColor = true;
+            // 
             // rb_mp3
             // 
             this.rb_mp3.AutoSize = true;
@@ -124,17 +135,6 @@ namespace BaixaPraMim
             this.rb_mp3.TabStop = true;
             this.rb_mp3.Text = "Música";
             this.rb_mp3.UseVisualStyleBackColor = true;
-            // 
-            // rb_video
-            // 
-            this.rb_video.AutoSize = true;
-            this.rb_video.Location = new System.Drawing.Point(14, 63);
-            this.rb_video.Name = "rb_video";
-            this.rb_video.Size = new System.Drawing.Size(72, 24);
-            this.rb_video.TabIndex = 1;
-            this.rb_video.TabStop = true;
-            this.rb_video.Text = "Vídeo";
-            this.rb_video.UseVisualStyleBackColor = true;
             // 
             // form_BaixaPraMim
             // 
@@ -154,6 +154,7 @@ namespace BaixaPraMim
             this.MinimizeBox = false;
             this.Name = "form_BaixaPraMim";
             this.Text = "Baixa Pra Mim v1.0";
+            this.Load += new System.EventHandler(this.form_BaixaPraMim_Load);
             this.groupBox_downloadType.ResumeLayout(false);
             this.groupBox_downloadType.PerformLayout();
             this.ResumeLayout(false);
