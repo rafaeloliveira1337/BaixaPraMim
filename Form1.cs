@@ -18,11 +18,11 @@ namespace BaixaPraMim
         private void downloadButton_Click(object sender, EventArgs e)
         {
             string videoUrl = input_videoUrl.Text;
-            videoUrl = "https://www.youtube.com/watch?v=MDpecrGsHKM";
+            // videoUrl = "https://www.youtube.com/watch?v=MDpecrGsHKM";
             
             if (!isValidUrl(videoUrl))
             {
-                System.Windows.Forms.MessageBox.Show("O campo \"URL do vídeo\" não pode estar vazio!", "Erro");
+                MessageBox.Show("O campo \"URL do vídeo\" não pode estar vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -32,7 +32,7 @@ namespace BaixaPraMim
             
             if (downloadMedia(videoUrl, mediaTypeRb.Name))
             {
-                System.Windows.Forms.MessageBox.Show("Processo concluído, verifique a área de trabalho.", "Pronto!");
+                MessageBox.Show("Processo concluído, verifique a área de trabalho.", "Pronto!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
             input_videoUrl.Text = "";
@@ -61,7 +61,10 @@ namespace BaixaPraMim
             string pathToDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string command = destinationFormating + " -o \"" + pathToDesktop + "\\%(title)s.%(ext)s\" " + videoUrl;
 
-            var processInfo = new ProcessStartInfo("youtube-dl.exe", command);
+            var roamingDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var youtubeDlExecutable = Path.Combine(roamingDirectory, "BaixaPraMim\\youtube-dl.exe");
+
+            var processInfo = new ProcessStartInfo(youtubeDlExecutable, command);
             processInfo.RedirectStandardOutput = true;
             processInfo.RedirectStandardError = true;
             processInfo.UseShellExecute = false;
@@ -72,9 +75,9 @@ namespace BaixaPraMim
             string err = process.StandardError.ReadToEnd();
             if (err.Length > 0)
             {
-                System.Windows.Forms.MessageBox.Show("Ocorreu um erro ao tentar baixar o item, verifique a conexão com a internet, a URL do vídeo, e tente novamente mais tarde.", "Erro");
-            Cursor = Cursors.Arrow;    
-            return false;
+                MessageBox.Show("Ocorreu um erro ao tentar baixar o item, verifique a conexão com a internet, a URL do vídeo, e tente novamente mais tarde.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Cursor = Cursors.Arrow;    
+                return false;
             }
             
             process.WaitForExit();
@@ -121,11 +124,6 @@ namespace BaixaPraMim
                     File.WriteAllBytes(entry.Key, entry.Value);
                 }
             }
-        }
-
-        private void debug(string message)
-        {
-            System.Windows.Forms.MessageBox.Show(message, "DEBUG");
         }
     }
 }
