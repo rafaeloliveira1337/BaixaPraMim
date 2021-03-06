@@ -93,10 +93,14 @@ namespace BaixaPraMim
 
         private void checkRequirements()
         {
-            // create required folders, if they don't already exist
+            // this will return System32 folder on 32-bit systems and SysWOW64 folder in 64-bit systems
+            var systemDirectory = Environment.GetFolderPath(Environment.SpecialFolder.SystemX86);
+
             var roamingDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var appFolder = Path.Combine(roamingDirectory, "BaixaPraMim");
             var presetsFolder = Path.Combine(appFolder, "presets");
+
+            // create required folders, if they don't already exist
             Directory.CreateDirectory(presetsFolder);
 
             // check this file separately because it's the only one that's not a byte array
@@ -115,9 +119,14 @@ namespace BaixaPraMim
             fileMap.Add(presetsFolder + "\\libvpx-360p.ffpreset", Properties.Resources.libvpx_360p);
             fileMap.Add(presetsFolder + "\\libvpx-720p.ffpreset", Properties.Resources.libvpx_720p);
             fileMap.Add(presetsFolder + "\\libvpx-720p50_60.ffpreset", Properties.Resources.libvpx_720p50_60);
-
+            
+            // TODO: see if we can get around the permission issue when writing to system folder,
+            // otherwise just leave the dll file in the user's doc folder and show a message saying 
+            // that the user needs to copy the file to System folder for the program to work.
+            //fileMap.Add(systemDirectory + "\\msvcr100.dll", Properties.Resources.msvcr100);
+            
             // only copy files that don't already exist on destination
-            foreach(KeyValuePair<string, byte[]> entry in fileMap)
+            foreach (KeyValuePair<string, byte[]> entry in fileMap)
             {
                 if (!File.Exists(entry.Key))
                 {

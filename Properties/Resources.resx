@@ -145,6 +145,9 @@
   <data name="libvpx_720p50_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\libvpx-720p50_60.ffpreset;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="msvcr100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\msvcr100.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="youtube_dl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\youtube-dl.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

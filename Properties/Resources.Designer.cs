@@ -163,6 +163,16 @@ namespace BaixaPraMim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] msvcr100 {
+            get {
+                object obj = ResourceManager.GetObject("msvcr100", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] youtube_dl {
             get {
                 object obj = ResourceManager.GetObject("youtube_dl", resourceCulture);
